@@ -5,7 +5,7 @@ const Available = ({playerPromise}) => {
     console.log(playerData);
     return (
         <div>
-            hello bangladesh player 
+            player selling by naim islam and sakib hasan 
         </div>
     );
 };
