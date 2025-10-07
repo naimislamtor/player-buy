@@ -33,7 +33,7 @@ const PlalyerCard = ({player, availableBalance, setAvailableBalance, setSelected
                 </div>
                 <div className="flex justify-between items-center mt-3">
                     <p className='font-bold'>Price: ${player.price} </p>
-                    <button disabled={isSelect} onClick={ () => (availableBalance < player.price ? toast("You don't have available balance") : selectedPlayer.length === 6 ? toast("6 Player Already Selected") : (setAvailableBalance(availableBalance-player.price), setIsSelect(true), setSelectedPlayer(prev => [...prev, player])) )} className="btn text-gray-600">{isSelect ? 'Selected' : 'Choose Player'}</button>
+                    <button disabled={isSelect} onClick={ () => (availableBalance < player.price ? toast("You don't have available balance") : selectedPlayer.length === 6 ? toast("6 Player Already Selected") : (setAvailableBalance(availableBalance-player.price),toast(`${player.name} selected`), setIsSelect(true), setSelectedPlayer(prev => [...prev, player])) )} className="btn text-gray-600">{isSelect ? 'Selected' : 'Choose Player'}</button>
                 </div>
             </div>
         </div>
