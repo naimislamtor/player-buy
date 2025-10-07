@@ -30,7 +30,7 @@ function App() {
         toggle === true ? <Suspense fallback={<span className="loading loading-dots loading-xl"></span>
         }>
           <Available selectedPlayer={selectedPlayer} setSelectedPlayer={setSelectedPlayer} availableBalance={availableBalance} setAvailableBalance={setAvailableBalance} playerPromise={playerPromise} ></Available>
-        </Suspense> : <Selected selectedPlayer={selectedPlayer}></Selected>
+        </Suspense> : <Selected availableBalance={availableBalance} setAvailableBalance={setAvailableBalance} setSelectedPlayer={setSelectedPlayer} selectedPlayer={selectedPlayer}></Selected>
       }
 
 
