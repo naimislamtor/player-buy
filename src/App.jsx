@@ -4,6 +4,7 @@ import './App.css'
 import Available from './Component/Available /Available'
 import Navbar from './Component/Navbar/Navbar'
 import Selected from './Component/Selected /Selected'
+import { ToastContainer, } from 'react-toastify';
 
 const fetchPlayer = async () => {
   const res = await fetch('/player.json');
@@ -33,7 +34,7 @@ function App() {
         </Suspense> : <Selected availableBalance={availableBalance} setAvailableBalance={setAvailableBalance} setSelectedPlayer={setSelectedPlayer} selectedPlayer={selectedPlayer}></Selected>
       }
 
-
+      <ToastContainer />
     </>
   )
 }

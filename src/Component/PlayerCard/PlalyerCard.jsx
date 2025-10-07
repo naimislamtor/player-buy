@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import manImg from '../../assets/Group.png'
 import CountryFlag from '../../assets/CountryFlag.png'
+import { toast } from 'react-toastify';
 
 
 
-const PlalyerCard = ({player, availableBalance, setAvailableBalance, setSelectedPlayer,}) => {
+const PlalyerCard = ({player, availableBalance, setAvailableBalance, setSelectedPlayer, selectedPlayer}) => {
     const [isSelect, setIsSelect] = useState(false);
     return (
         
@@ -32,7 +33,7 @@ const PlalyerCard = ({player, availableBalance, setAvailableBalance, setSelected
                 </div>
                 <div className="flex justify-between items-center mt-3">
                     <p className='font-bold'>Price: ${player.price} </p>
-                    <button disabled={isSelect} onClick={ () => { availableBalance < player.price ? alert("You don't have available balance") :(setAvailableBalance(availableBalance-player.price), setIsSelect(true), setSelectedPlayer(prev => [...prev, player])) }} className="btn text-gray-600">{isSelect ? 'Selected' : 'Choose Player'}</button>
+                    <button disabled={isSelect} onClick={ () => (availableBalance < player.price ? toast("You don't have available balance") : selectedPlayer.length === 6 ? toast("6 Player Already Selected") : (setAvailableBalance(availableBalance-player.price), setIsSelect(true), setSelectedPlayer(prev => [...prev, player])) )} className="btn text-gray-600">{isSelect ? 'Selected' : 'Choose Player'}</button>
                 </div>
             </div>
         </div>
