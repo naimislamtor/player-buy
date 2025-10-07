@@ -1,11 +1,17 @@
 import React, { use } from 'react';
 
-const Available = ({playerPromise}) => {
+import PlalyerCard from '../PlayerCard/PlalyerCard';
+
+const Available = ({ playerPromise, availableBalance, setAvailableBalance, setSelectedPlayer, selectedPlayer}) => {
     const playerData = use(playerPromise);
-    console.log(playerData);
+    // console.log(playerData);
     return (
-        <div>
-            player selling by naim islam and sakib hasan 
+        <div className='max-w-[1320px] mx-auto  grid  sm:grid-cols-1 md:grid-cols-3  gap-4'>
+
+            {
+                playerData.map(player => <PlalyerCard player={player} selectedPlayer={selectedPlayer} setSelectedPlayer={setSelectedPlayer} availableBalance={availableBalance} setAvailableBalance={setAvailableBalance} ></PlalyerCard> )
+            }
+            
         </div>
     );
 };

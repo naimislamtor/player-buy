@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Selected = () => {
+const Selected = ({selectedPlayer}) => {
+    console.log(selectedPlayer);
     return (
-        <div>
-            
+        <div className='max-w-[1320px] mx-auto'>
+            hello im hare
         </div>
     );
 };
